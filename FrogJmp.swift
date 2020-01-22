@@ -25,7 +25,7 @@ X, Y and D are integers within the range [1..1,000,000,000];
 X ≤ Y.
 */
 
-
+//Solution 1
 public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
 
     var intPart = Int((Y - X) / D)
@@ -39,3 +39,16 @@ public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
 }
 
 
+//Solution 2
+public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
+  
+  var result = 0
+  var floatResult : Double = 0.0
+  
+  if  D <= 0 {
+      return result
+  }
+  
+  floatResult = (Double(Y-X) / Double(D)).rounded(.up)
+  return Int(floatResult)
+}
