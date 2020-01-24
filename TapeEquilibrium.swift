@@ -89,6 +89,5 @@ public func solution(_ A : inout [Int]) -> Int {
      minDiff = min(minDiff, diff)
  }
  
-
  return minDiff   // write your code in Swift 4.2.1 (Linux)
 }
