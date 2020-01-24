@@ -40,7 +40,7 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [2..100,000];
 each element of array A is an integer within the range [−1,000..1,000]./
 
-
+//solution 1
 public func solution(_ A : inout [Int]) -> Int {
  var diff = Int.max
  if A.count == 0 {
@@ -71,4 +71,24 @@ public func solution(_ A : inout [Int]) -> Int {
  }
      
  return diff
+}
+
+
+//solution 2
+public func solution(_ A : inout [Int]) -> Int {
+ let totalT = A.reduce(0, +)
+ var leftP = 0
+ var rightP = totalT
+ var minDiff = Int.max
+ 
+ for x in 0..<A.count-1 {
+     leftP += A[x]
+     rightP -= A[x]
+     
+     let diff = abs(leftP - rightP)
+     minDiff = min(minDiff, diff)
+ }
+ 
+
+ return minDiff   // write your code in Swift 4.2.1 (Linux)
 }
